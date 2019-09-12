@@ -1,0 +1,10 @@
+{
+  "name": "wetubepractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
