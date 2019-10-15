@@ -1,0 +1,39 @@
+extends ../layout/main.pug
+include ../mixins/comment.pug
+block content
+  .video__container#jsVideoContainer
+    .video__player
+      video#jsVideo(src=`/${video.fileUrl}`, controls=true)
+    .video__info  
+      if userFromMiddleware && video.creator.id === userFromMiddleware.id 
+        a(href=routes.editVideo(video.id)) 
+          button edit video
+      h1.video__title Title: #{video.title}
+      if video.views === 1
+        h4.video__views 1 view
+      else
+        h4.video__views #{video.views} views
+      h4.video__creator Uploader : 
+        a(href=routes.userDetail(video.creator.id)) #{video.creator.name}
+      h4 Description
+      p.video__description #{video.description}
+    .video__comments
+      if video.comments.length === 1
+        span.video__comment-number 1 comment
+      else 
+        span.video__comment-number #{video.comments.length} comments
+      if userFromMiddleware
+        form.video__comment-form#jsAddCommentForm(autocomplete="off")
+          input#jsAddCommentInput(type="text", placeholder="add comment...")
+      else
+        h4 댓글을 남기시려면 로그인하세요 :)
+      ul.video__comment-list#jsCommentList
+        for comment in video.comments.reverse()
+          +comment({
+            avatarUrl:comment.creator.avatarUrl,
+            name:comment.creator.name,
+            text:comment.text,
+            createdAt:comment.createdAt,
+            id:comment.creator.id,
+            cid:comment.id
+          })

@@ -1,0 +1,22 @@
+header.header
+  .header__wrapper
+    .header__columns
+      a(href=routes.home)
+        i.fab.fa-youtube
+    .header__columns
+      form(action=routes.search, method="get")
+        input(type="text", name="search", placeholder="search")
+    .header__columns
+      ul
+        if !userFromMiddleware
+          li
+            a(href=routes.join) Join
+          li
+            a(href=routes.login) Login
+        else
+          li
+            a(href=`/videos${routes.uploadVideo}`) Upload
+          li
+            a(href=routes.me) Profile
+          li
+            a(href=routes.logout) Logout

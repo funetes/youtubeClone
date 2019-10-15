@@ -1,0 +1,13 @@
+extends ../layout/main.pug
+include ../mixins/videoBlock.pug
+block content
+  .search__header
+    p searching by #{searchTerm}
+  .search__results
+    for video in videos
+      +videoBlock({
+        videoFile:video.fileUrl,
+        title:video.title,
+        views:video.views,
+        id:video.id
+      })

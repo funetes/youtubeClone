@@ -1,0 +1,16 @@
+mixin comment(comment = {})
+  .commentBlock
+    li
+      img.commentBlock__avatar(src=comment.avatarUrl, alt="avatar")
+      .commentBlock__wrapper
+        .commentBlock__commentUserName=comment.name
+          span #{comment.createdAt.getFullYear()} .
+          span|#{comment.createdAt.getMonth()+1} .
+          span|#{comment.createdAt.getUTCDate()}
+        .commentBlock__comment=comment.text
+      if userFromMiddleware && userFromMiddleware.id == comment.id
+        button.deleteButton(data-commentId=comment.cid) Delete
+
+     
+
+  

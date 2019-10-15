@@ -1,0 +1,39 @@
+extends ../layout/main.pug
+include ../mixins/videoBlock.pug
+
+block content
+  .user-detail__container
+    .user-detail__wrapper
+      img.user-detail__img(src=user.avatarUrl)
+      a.user-detail__himlUrl(href=user.htmlUrl)=user.htmlUrl
+      a.user-detail__email(href=`mailto:${user.email}`)=user.email
+      if userFromMiddleware && user.id == userFromMiddleware.id
+        button.user-detail__editProfile
+          a(href=`/users${routes.editProfile}`) EditProfile
+    .user-detatil__videoList
+      each video in user.videos
+        +videoBlock({
+          id:video.id,
+          videoFile:video.fileUrl,
+          title:video.title,
+          views:video.views
+        })
+        +videoBlock({
+          id:video.id,
+          videoFile:video.fileUrl,
+          title:video.title,
+          views:video.views
+        })
+        +videoBlock({
+          id:video.id,
+          videoFile:video.fileUrl,
+          title:video.title,
+          views:video.views
+        })
+        +videoBlock({
+          id:video.id,
+          videoFile:video.fileUrl,
+          title:video.title,
+          views:video.views
+        })
+        

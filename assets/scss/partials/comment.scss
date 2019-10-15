@@ -1,0 +1,43 @@
+
+
+.commentBlock{
+  li{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    img{
+      width: 10vh;
+      height: 10vh;
+      border-radius: 50%;
+    }
+    .commentBlock__wrapper{
+      margin-left:10px;
+      .commentBlock__commentUserName{
+        font-size: 17px;
+        font-weight: bold;
+        color:rgba(255, 255, 255, 0.7);
+        margin-bottom: 5px;
+        span{
+          font-size: 10px;
+          opacity: 0.5;
+          &:nth-child(1){
+            margin-left:10px;
+            
+          }
+        }
+      }
+    }
+    .deleteButton{
+      max-width: 50px;
+      padding: 5px 0px;
+      margin-left: auto;
+      opacity: .3;
+      cursor: pointer;
+      background-color: $red;
+      transition: opacity .3s ease-in-out;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}

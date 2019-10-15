@@ -1,0 +1,19 @@
+.home-videos{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-gap: 15px;
+  grid-column: span 3;
+  padding: 0px 10px;
+  color: rgba(255, 255, 255, 0.9);
+  .videoBlock__videoInfo{
+    margin-top: 10px;
+    .videoBlock__videoTitle{
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .videoBlock__videoViews{
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.header{
+  background-color: #292929;
+  .header__wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    padding: 5px 0px;
+    max-width: 1200px;
+    align-items: center;
+    width: 100%;
+    .header__columns{
+      a{
+        i{
+          color:white;
+          font-size: 40px;
+        }
+      }
+      &:first-child{
+        margin: 0 auto;
+      }
+      &:nth-child(2){
+        width: 100%;
+        form{
+          width: 100%;
+          input{
+            width: 100%;
+            font-size: 14px;
+            border-radius: 5px;
+            color:$black;
+            font-weight: 600;
+            &::placeholder {
+              font-weight: 300;
+              color: rgba(0, 0, 0, 0.7);
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      ul{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
