@@ -27,8 +27,7 @@ const Store = MongoStore(session);
 
 app.set("view engine", "pug");
 app.set('views', path.join(__dirname, '/views/pages'));
-app.use('/uploads',express.static('uploads'));
-app.use('/static',express.static('static'));
+app.use('/static', express.static(path.join(__dirname, "static")));
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(cookieParser());
@@ -38,12 +37,12 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(session({
   secret: process.env.COOKIE_SECRET,
-  resave:false,
+  resave: false,
   saveUninitialized: true,
   store: new Store({
-    mongooseConnection:mongoose.connection
+    mongooseConnection: mongoose.connection
   })
-  
+
 }))
 app.use(passport.initialize());
 app.use(passport.session());

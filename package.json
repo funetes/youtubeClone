@@ -36,13 +36,20 @@
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js",
-    "dev:assets": "WEBPACK_ENV=development webpack -w",
-    "build:assets": "WEBPACK_ENV=production webpack"
+    "dev:assets": "cd src && NODE_ENV='development' webpack -w",
+    "build:assets": "cd src && NODE_ENV='production' webpack",
+    "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
+    "copyAll": "cp -R src/static build && cp -R src/views build",
+    "build": "npm run build:server && npm run build:assets && npm run copyAll",
+    "prebuild": "rm -rf build",
+    "start": "node build/init.js"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.1",
     "@babel/preset-env": "^7.6.0",
+    "babel-cli": "^6.26.0",
     "nodemon": "^1.19.2"
   },
   "nodemonConfig": {
