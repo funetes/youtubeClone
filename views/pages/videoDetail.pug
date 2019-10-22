@@ -3,7 +3,7 @@ include ../mixins/comment.pug
 block content
   .video__container#jsVideoContainer
     .video__player
-      video#jsVideo(src=`/${video.fileUrl}`, controls=true)
+      video#jsVideo(src=video.fileUrl, controls=true)
     .video__info  
       if userFromMiddleware && video.creator.id === userFromMiddleware.id 
         a(href=routes.editVideo(video.id)) 
