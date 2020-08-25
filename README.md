@@ -21,25 +21,26 @@
 ##### login with github
 
 <p align="center">
-  <img src='img/loginWithGithub.gif'/>
+  <img src='https://github.com/funetes/wetube-final/raw/master/img/loginWithGithub.gif'/>
 </p>
 
 ##### show video
 
 <p align="center">
-  <img src='img/showvideo.gif'/>
+  <img src='https://github.com/funetes/wetube-final/raw/master/img/showvideo.gif'/>
 </p>
 
 ##### add & delete Comment
 
 <p align="center">
-  <img src='img/add&deleteComment.gif'/>
+  <img src='https://github.com/funetes/wetube-final/raw/master/img/add&deleteComment.gif'/>
 </p>
 
 ##### upload video
 
 <p align="center">
-  <img src='img/upload.gif'/>
+  <img src='https://github.com/funetes/wetube-final/raw/master/img/upload.gif'/>
 </p>
 
-[바로가기](https://protected-citadel-42153.herokuapp.com/)
+[바로가기](https://protected-citadel-42153.herokuapp.com/) 
+heroku 배포환경이라 다소 시간이 걸릴 수 있습니다.
